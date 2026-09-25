@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Nexus: interactive demo</title>
+  <meta name="description" content="Get campus permissions, check library availability and borrow lab equipment with a QR code. Interactive demo with sample data.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#" data-action="go" data-tab="ask" id="brand"></a>
+      <nav class="tabs" aria-label="Main" id="tabs"></nav>
+      <div class="who-wrap" id="who"></div>
+      <div class="bell-wrap">
+        <button class="bell" id="bell" type="button" data-action="toggle-bell" aria-haspopup="true" aria-expanded="false" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          <span class="bell__count" id="bell-count" hidden>0</span>
+        </button>
+        <div class="bell-panel" id="bell-panel" hidden></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1"></main>
+
+  <footer class="footer">
+    <p>Sample data for a hackathon demo. Nothing you type leaves this browser.</p>
+    <button type="button" class="btn btn--quiet" data-action="reset-demo">Reset demo data</button>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/vendor/qrcode.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
